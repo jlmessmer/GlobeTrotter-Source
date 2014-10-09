@@ -1,24 +1,24 @@
 GlobeTrotter v0.1
 ============
 
-Geography Game
+<h2>Geography Game</h2>
 
-Thanks for trying out GlobeTrotter! You're awesome (and I mean it).
+<p>Thanks for trying out GlobeTrotter! You're awesome (and I mean it).
 Before you get too excited to try out this awesome game, it's still in a *very* early build,
 so there aren't that many places you go (as of now there are only 3), but there I'm in the
-process of adding more as I type.
+process of adding more as I type.</p>
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-How to actually get the game running:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you're on a Mac or Linux, just open up your favorite terminal client and type this:
+
+<h3>How to actually get the game running:</h3>
+
+<p>If you're on a Mac or Linux, just open up your favorite terminal client and type this:</p>
 <code>java -jar /path/to/GlobeTrotter.jar</code>
-You can also drag the jar file into the terminal window instead of typing out the entire
-path.
+<p>You can also drag the jar file into the terminal window instead of typing out the entire
+path.</p>
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-How to Play
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h3>How to Play</h3>
+
 It's pretty easy to get started, but here are some more in depth instructions if it's not 
 clear just by starting the game:
 
