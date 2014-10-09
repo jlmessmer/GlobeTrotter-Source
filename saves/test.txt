@@ -1,0 +1,26 @@
+name
+test
+difficulty
+3
+money
+95110
+score
+730
+Distance Traveled
+36
+Location
+London
+Places Traveled
+Rome
+Paris
+Places Left
+Attractions Seen
+Colliseum
+St. Peters
+Forum
+Notre Dame
+Arc de Triomphe
+Eiffel Tower
+London Eye
+Parliament Session
+Westminster

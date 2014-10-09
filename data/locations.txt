@@ -1,0 +1,52 @@
+name
+London
+	51 
+	0
+	Attraction
+		London Eye
+			10
+			30
+	Attraction
+		Parliament Session
+			5
+			0
+	Attraction
+		Westminster
+			15
+			50
+end
+name
+Paris
+	49
+	2
+	Attraction
+		Notre Dame
+			20
+			75
+	Attraction
+		Arc de Triomphe
+			15
+			0
+	Attraction
+		Eiffel Tower
+			20
+			50
+end
+name
+Rome
+	42
+	12
+	Attraction
+		Colliseum
+			25
+			70
+	Attraction
+		St. Peters
+			15
+			35
+	Attraction
+		Forum
+			10
+			0
+end
+		
