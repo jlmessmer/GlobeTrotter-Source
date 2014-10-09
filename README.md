@@ -1,28 +1,21 @@
 GlobeTrotter v0.1
 ============
 
-<h2>Geography Game</h2>
+<h2>Geography Game Source</h2>
 
-<p>Thanks for trying out GlobeTrotter! You're awesome (and I mean it).
-Before you get too excited to try out this awesome game, it's still in a *very* early build,
-so there aren't that many places you go (as of now there are only 3), but there I'm in the
-process of adding more as I type.</p>
+<p>This is the source code for the game I made called <a href="https://github.com/liteblade/GlobeTrotter">GlobeTrotter</a></p>
 
 
-<h3>How to actually get the game running:</h3>
+<h3>Info</h3>
 
-<p>If you're on a Mac or Linux, just open up your favorite terminal client and type this:</p>
-<code>java -jar /path/to/GlobeTrotter.jar</code>
-<p>You can also drag the jar file into the terminal window instead of typing out the entire
-path.</p>
+<p>This is still in a very early alpha build. I still need to add a bunch of locations people can go to
+and refine the game mechanics.</p>
 
 
-<h3>How to Play</h3>
-
-It's pretty easy to get started, but here are some more in depth instructions if it's not 
-clear just by starting the game:
-
-1)Select 'New Game'<br>
-2)Follow the command prompts on the screen.<br>
-3)Choose if you want to travel somewhere new or see some sights in your starting location.<br>
-4)Rinse and repeat until you run out of money or have gone everywhere in the world
+<h3Todo List</h3>
+<ol>
+<li>Add more locations (I want to get it up to 100 locations eventually).</li>
+<li>Refine the game mechanics. Add better scoring for distance traveled vs attractions seen, etc</li>
+<li>Eventually give the game a GUI, but that's a while down the road after I've finished the gameplay
+mechanics</li>
+<ol>
