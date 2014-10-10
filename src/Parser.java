@@ -47,6 +47,7 @@ public class Parser {
 		    			started = true;
 		    			//arr.clear();
 		    			name = reader.readLine().trim();
+		    			//System.out.println(name);
 		    			lat = Integer.parseInt(reader.readLine().trim());
 		    			lon = Integer.parseInt(reader.readLine().trim());
 		    			break;

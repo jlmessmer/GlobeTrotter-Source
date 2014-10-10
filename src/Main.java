@@ -183,11 +183,6 @@ public class Main {
 	public static void loop(){
 		Parser parse = new Parser();
 		//System.out.println(save.getPath());
-		try {
-			System.out.println("==========\nPath: " + save.getCanonicalPath() + "\n==========");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		InputStream is = null;
 		try {
 			is = new FileInputStream(save.getAbsolutePath());
@@ -306,7 +301,7 @@ public class Main {
 			loop();
 		}
 		else{
-			System.out.println("Hi!");
+			//System.out.println("Hi!");
 			Parser parse = new Parser();
 			ArrayList<Location> locs = parse.parseLoc("data/locations.txt");
 			
@@ -340,20 +335,20 @@ public class Main {
 			System.out.println(cost);
 			p.setMoney(p.getMoney() - cost);
 			
+			ArrayList<String> locsLeft = p.getLocsLeft();
+			
 			for(int i = 0; i < p.getLocsLeft().size(); i++){
-				if(p.getLocsLeft().get(i).equals(locOne.getName())){
-					if(attSeen >= 3){
-						ArrayList<String> locsLeft = p.getLocsLeft();
-						locsLeft.remove(i);
-						p.setLocsLeft(locsLeft);
-					}
+				if(p.getLocsLeft().get(i).equals(locOne.getName()) && attSeen >= 3){
+					System.out.println("Loc: " + locsLeft.get(i));
+					locsLeft.remove(i);
 				}
 			}
+			p.setLocsLeft(locsLeft);
 			if(attSeen >= 3){
 				p.getLocsBeen().add(p.getCurrentLoc());
 			}
 			p.setScore(p.getScore() + (distance / 50));
-			if(distance > 50){
+			if(distance > 1000){
 				p.setScore(p.getScore() + 25);
 			}
 			p.setDistanceTraveled(p.getDistanceTraveled() + distance);
@@ -376,7 +371,7 @@ public class Main {
 		}
 		int index = 1;
 		ArrayList<Attraction> atts = currentLoc.getAttractions();
-		System.out.println(p.getAttsBeen());
+		//System.out.println(p.getAttsBeen());
 		for(int i = 0; i < atts.size(); i++){
 			boolean seen = false;
 			for(String s : p.getAttsBeen()){
@@ -409,13 +404,13 @@ public class Main {
 			p.setAttsBeen(attSeen);
 			
 			ArrayList<Attraction> attns = currentLoc.getAttractions();
-			System.out.println(attns.size());
+			//System.out.println(attns.size());
 			if(currentLoc.getAttractions().size() <= 1){
-				System.out.println("Aha");
+				//System.out.println("Aha");
 				for(int i = 0; i < p.getLocsLeft().size(); i++){
-					ArrayList<String> locsLeft = p.getLocsLeft();
-					locsLeft.remove(i);
-					p.setLocsLeft(locsLeft);
+					//ArrayList<String> locsLeft = p.getLocsLeft();
+					//locsLeft.remove(i);
+					//p.setLocsLeft(locsLeft);
 				}
 			}
 			//System.out.println(p);
@@ -452,7 +447,7 @@ public class Main {
 		double d = 6371 * c;
 		
 		//double longDist = Math.sqrt(((latE*latE) - (latS*latS)) + ((lonE*lonE) - (lonS*lonS)));
-		System.out.println(d);
+		//System.out.println(d);
 		return (int)Math.round(d);
 	}
 	
