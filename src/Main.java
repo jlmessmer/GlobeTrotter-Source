@@ -402,17 +402,6 @@ public class Main {
 			p.setScore(p.getScore() + a.getPopularity());
 			p.setMoney(p.getMoney() - (int)a.getPrice());
 			p.setAttsBeen(attSeen);
-			
-			ArrayList<Attraction> attns = currentLoc.getAttractions();
-			//System.out.println(attns.size());
-			if(currentLoc.getAttractions().size() <= 1){
-				//System.out.println("Aha");
-				for(int i = 0; i < p.getLocsLeft().size(); i++){
-					//ArrayList<String> locsLeft = p.getLocsLeft();
-					//locsLeft.remove(i);
-					//p.setLocsLeft(locsLeft);
-				}
-			}
 			//System.out.println(p);
 			save(p);
 			loop();
