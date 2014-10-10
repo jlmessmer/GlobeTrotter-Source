@@ -440,9 +440,18 @@ public class Main {
 		long latE = e.getLat();
 		long lonE = e.getLon();
 		
-		double longDist = Math.sqrt(((latE*latE) - (latS*latS)) + ((lonE*lonE) - (lonS*lonS)));
-		System.out.println(longDist);
-		return (int)Math.round(longDist);
+		double dLat = Math.toRadians(latS-latE);
+		double dLon = Math.toRadians(lonS - lonE);
+		
+		double a = Math.sin(dLat/2) * Math.sin(dLat/2) +  
+		         Math.cos(Math.toRadians(latS)) * Math.cos(Math.toRadians(latE)) *  
+		         Math.sin(dLon/2) * Math.sin(dLon/2); 
+		double c = 2 * Math.asin(Math.sqrt(a));
+		double d = 6371 * c;
+		
+		//double longDist = Math.sqrt(((latE*latE) - (latS*latS)) + ((lonE*lonE) - (lonS*lonS)));
+		System.out.println(d);
+		return (int)Math.round(d);
 	}
 	
 	public static void endGame(Player p){
