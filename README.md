@@ -15,7 +15,6 @@ and refine the game mechanics.</p>
 <h3Todo List</h3>
 <ol>
 <li>Add more locations (I want to get it up to 100 locations eventually).</li>
-<li>Refine the game mechanics. Add better scoring for distance traveled vs attractions seen, etc</li>
 <li>Eventually give the game a GUI, but that's a while down the road after I've finished the gameplay
 mechanics</li>
 <ol>
