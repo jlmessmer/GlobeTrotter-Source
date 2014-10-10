@@ -350,7 +350,7 @@ public class Main {
 			if(attSeen >= 3){
 				p.getLocsBeen().add(p.getCurrentLoc());
 			}
-			p.setScore(p.getScore() + (distance * 10));
+			p.setScore(p.getScore() + (distance / 50));
 			if(distance > 50){
 				p.setScore(p.getScore() + 25);
 			}
