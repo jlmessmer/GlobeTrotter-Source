@@ -49,4 +49,83 @@ Rome
 			10
 			0
 end
-		
+New York
+	42
+	-75
+	Attraction
+		Metropolitan Art
+			20
+			30
+	Attraction
+		Times Square
+			10
+			0
+	Attraction
+		Broadway
+			100
+			25
+end
+Tokyo
+	35
+	139
+	Attraction
+		One
+			25
+			70
+	Attraction
+		Two
+			15
+			35
+	Attraction
+		Three
+			10
+			0
+end
+Florence
+	43
+	11
+	Attraction
+		Uffizi
+			25
+			100
+	Attraction
+		Duomo
+			15
+			35
+	Attraction
+		Three
+			10
+			0
+end
+Berlin
+	52
+	13
+	Attraction
+		Brandenburg Gate
+			15
+			0
+	Attraction
+		Two
+			15
+			35
+	Attraction
+		Three
+			10
+			0
+end
+Moscow
+	56
+	38
+	Attraction
+		Kremlin
+			25
+			70
+	Attraction
+		Red Square
+			15
+			35
+	Attraction
+		Three
+			10
+			0
+end	

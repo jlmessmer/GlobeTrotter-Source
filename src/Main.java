@@ -336,7 +336,9 @@ public class Main {
 			}
 			
 			String loc = p.getLocsLeft().get(choice - 1);
-			p.setMoney(p.getMoney() - 2000);
+			int cost = (int) Math.round(50 + (distance * 0.11));
+			System.out.println(cost);
+			p.setMoney(p.getMoney() - cost);
 			
 			for(int i = 0; i < p.getLocsLeft().size(); i++){
 				if(p.getLocsLeft().get(i).equals(locOne.getName())){
@@ -444,7 +446,7 @@ public class Main {
 		double dLon = Math.toRadians(lonS - lonE);
 		
 		double a = Math.sin(dLat/2) * Math.sin(dLat/2) +  
-		         Math.cos(Math.toRadians(latS)) * Math.cos(Math.toRadians(latE)) *  
+		         Math.cos(Math.toRadians(latS)) * Math.cos(Math.toRadians(latE)) *
 		         Math.sin(dLon/2) * Math.sin(dLon/2); 
 		double c = 2 * Math.asin(Math.sqrt(a));
 		double d = 6371 * c;
