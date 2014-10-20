@@ -1,0 +1,47 @@
+name
+liteblade
+difficulty
+3
+money
+95400
+score
+1258
+Distance Traveled
+31546
+Location
+Moscow
+Places Traveled
+London
+Paris
+Rome
+New York
+Tokyo
+Florence
+Berlin
+Places Left
+Moscow
+Attractions Seen
+London Eye
+Parliament Session
+Westminster
+Notre Dame
+Arc de Triomphe
+Eiffel Tower
+Colliseum
+St. Peters
+Forum
+Metropolitan Art
+Times Square
+Broadway
+TokyoOne
+TokyoTwo
+TokyoThree
+Uffizi
+Duomo
+FlorenceThree
+Brandenburg Gate
+BerlinTwo
+BerlinThree
+Kremlin
+Red Square
+MoscowThree

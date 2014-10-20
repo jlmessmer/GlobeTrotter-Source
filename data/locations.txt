@@ -49,6 +49,7 @@ Rome
 			10
 			0
 end
+name
 New York
 	42
 	-75
@@ -65,22 +66,24 @@ New York
 			100
 			25
 end
+name
 Tokyo
 	35
 	139
 	Attraction
-		One
+		TokyoOne
 			25
 			70
 	Attraction
-		Two
+		TokyoTwo
 			15
 			35
 	Attraction
-		Three
+		TokyoThree
 			10
 			0
 end
+name
 Florence
 	43
 	11
@@ -93,10 +96,11 @@ Florence
 			15
 			35
 	Attraction
-		Three
+		FlorenceThree
 			10
 			0
 end
+name
 Berlin
 	52
 	13
@@ -105,14 +109,15 @@ Berlin
 			15
 			0
 	Attraction
-		Two
+		BerlinTwo
 			15
 			35
 	Attraction
-		Three
+		BerlinThree
 			10
 			0
 end
+name
 Moscow
 	56
 	38
@@ -125,7 +130,7 @@ Moscow
 			15
 			35
 	Attraction
-		Three
+		MoscowThree
 			10
 			0
 end	

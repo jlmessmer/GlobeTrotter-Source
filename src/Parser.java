@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,12 +20,20 @@ public class Parser {
 	
 	public ArrayList<Location> parseLoc(String path)
 	{
+		//System.out.println(System.getProperty("user.dir"));
+		//System.out.println(path);
 		ArrayList<Location> locs = new ArrayList<Location>();
 		
 		@SuppressWarnings("unused")
 		Location l;
 		
-		InputStream is = getClass().getResourceAsStream(path);
+		InputStream is = null;
+		try {
+			is = new FileInputStream(path);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}//new InputStream(path);//getClass().getResourceAsStream(path);
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader reader = null;
 		boolean started = false;

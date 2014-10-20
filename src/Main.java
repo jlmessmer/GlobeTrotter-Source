@@ -1,10 +1,11 @@
+import java.awt.EventQueue;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+//import java.io.InputStream;
+//import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -24,6 +25,19 @@ public class Main {
 	private static String path = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 	
 	public static void main(String[] args){
+		//System.out.println(System.getProperty("user.dir"));
+		//File f = new File(System.getProperty("user.dir") + "/data/locations.txt");
+		//System.out.println(f.exists());
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Interface window = new Interface();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 		mainMenu();
 	}
 	
@@ -181,26 +195,26 @@ public class Main {
 	}
 	
 	public static void loop(){
-		Parser parse = new Parser();
+		//Parser parse = new Parser();
 		//System.out.println(save.getPath());
-		InputStream is = null;
+		/*InputStream is = null;
 		try {
 			is = new FileInputStream(save.getAbsolutePath());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//Main.class.getResourceAsStream(save.getAbsolutePath());
-				
-		InputStreamReader isr = new InputStreamReader(is);
-		Player p = parse.getSave(isr);
+				*/
+		//InputStreamReader isr = new InputStreamReader(is);
+		//Player p = parse.getSave(isr);
 		
 		//System.out.println(p);
 		
-		int attractions = 3 * parse.parseLoc("data/locations.txt").size();
+		//int attractions = 3 * parse.parseLoc("data/locations.txt").size();
 		
 		//System.out.println(p.toString());
 		//System.out.println(p.getAttsBeen().size() + " " + attractions);
-		while(p.getMoney() > 0 && (p.getLocsLeft().size() > 0 && p.getAttsBeen().size() <= attractions)){		
+		/*while(p.getMoney() > 0 && (p.getLocsLeft().size() > 0 && p.getAttsBeen().size() <= attractions)){		
 			System.out.println("[1]Travel\n[2]Do Things\n[3]View Stats\n[4]Quit");
 			System.out.print("What Do You Want to Do, " + p.getName() + "? ");
 			switch(keyboard.next()){
@@ -223,19 +237,19 @@ public class Main {
 					break;
 			}
 		}
-		endGame(p);
+		endGame(p);*/
 	}
 	
 	public static void save(Player p){
 		//System.out.println(p);
-		String decodedPath = "";
-		try {
+		String decodedPath = System.getProperty("user.dir") ;
+		/*try {
 			decodedPath = URLDecoder.decode(path, "UTF-8");
 			decodedPath = decodedPath.substring(0, decodedPath.lastIndexOf("/") + 1);
 		} catch (UnsupportedEncodingException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
-		}
+		}*/
 		
 		save = new File("/" + decodedPath + "/saves/" + p.getName() + ".txt");
 		try {
@@ -287,8 +301,8 @@ public class Main {
 	        }
 	}
 	
-	public static void travel(Player p){
-		int index = 1;
+	public static void travel(Player p, String dest){
+		/*int index = 1;
 		for(int i = 0; i < p.getLocsLeft().size(); i++){
 			if(!p.getLocsLeft().get(i).equals(p.getCurrentLoc())){
 				System.out.println("[" + (i+1) + "]" + p.getLocsLeft().get(i));
@@ -299,8 +313,8 @@ public class Main {
 		int choice = keyboard.nextInt();
 		if(choice == index){
 			loop();
-		}
-		else{
+		}*/
+		//else{
 			//System.out.println("Hi!");
 			Parser parse = new Parser();
 			ArrayList<Location> locs = parse.parseLoc("data/locations.txt");
@@ -309,7 +323,7 @@ public class Main {
 			Location locTwo = null;
 			
 			for(Location l : locs){
-				if(l.getName().equals(p.getLocsLeft().get(choice - 1))){
+				if(l.getName().equals(dest)){
 					locTwo = l;
 				}
 				if(l.getName().equals(p.getCurrentLoc())){
@@ -330,9 +344,9 @@ public class Main {
 				}
 			}
 			
-			String loc = p.getLocsLeft().get(choice - 1);
+			String loc = dest;
 			int cost = (int) Math.round(50 + (distance * 0.11));
-			System.out.println(cost);
+			//System.out.println(cost);
 			p.setMoney(p.getMoney() - cost);
 			
 			ArrayList<String> locsLeft = p.getLocsLeft();
@@ -354,8 +368,8 @@ public class Main {
 			p.setDistanceTraveled(p.getDistanceTraveled() + distance);
 			p.setCurrentLoc(loc);
 			save(p);
-			loop();
-		}
+			//loop();
+		//}
 	}
 
 	public static void doStuff(Player p){
@@ -469,6 +483,54 @@ public class Main {
 	    {
 	        
 	    }
+	}
+	
+	public final static String[] getAtts(Player p){
+		String loc = p.getCurrentLoc();
+		Parser parse = new Parser();
+		Location currentLoc = null;
+		ArrayList<Location> locs = parse.parseLoc("data/locations.txt");
+		for(Location l : locs){
+			if(l.getName().equals(loc)){
+				currentLoc = l;
+			}
+		}
+		ArrayList<Attraction> atts = currentLoc.getAttractions();
+		
+		boolean removed = false;
+		//System.out.println(p.getAttsBeen());
+		for(int i = 0; i < atts.size(); i++){
+			removed = false;
+			//boolean seen = false;
+			//System.out.println(atts.size() + ": " + atts);
+			for(String s : p.getAttsBeen()){
+				if(atts.get(i).getName().equals(s)){
+					//seen = true;
+					//System.out.println(atts.get(i).getName());
+					atts.remove(i);
+					removed = true;
+				}
+			}
+			if(removed)
+				i--;
+		}
+		String[] attractions = new String[atts.size()];
+		for(int i = 0; i < attractions.length; i++){
+			attractions[i] = atts.get(i).getName();
+		}
+		return attractions;
+	}
+	
+	public final static String[] getLocsLeft(Player p){
+		String[] locsLeft = new String[p.getLocsLeft().size()];
+		//int index = 1;
+		for(int i = 0; i < p.getLocsLeft().size(); i++){
+			if(!p.getLocsLeft().get(i).equals(p.getCurrentLoc())){
+				locsLeft[i] = p.getLocsLeft().get(i);//System.out.println("[" + (i+1) + "]" + p.getLocsLeft().get(i));
+			}
+			//index++;
+		}
+		return locsLeft;
 	}
 
 }
